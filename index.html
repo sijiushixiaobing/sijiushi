@@ -131,6 +131,9 @@
   .row:last-child{margin-bottom:0;}
   .row .img{width:560px;height:380px;flex-shrink:0;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#EDE6D8,#D8CDB8);}
   .row .img img{width:100%;height:100%;object-fit:cover;}
+  .row .img.biz-icon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;}
+  .row .img.biz-icon svg{width:104px;height:104px;}
+  .row .img.biz-icon .biz-cap{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:6px;color:var(--espresso);}
   .row.reverse{flex-direction:row-reverse;}
   .row .txt{flex:1;}
   .row .txt h3{font-family:var(--serif);font-weight:700;font-size:28px;color:var(--ink);margin-bottom:18px;}
@@ -222,9 +225,10 @@
   .footer-col a{display:block;color:#C9C0B2;text-decoration:none;font-size:14px;margin-bottom:12px;transition:color .2s;}
   .footer-col a:hover{color:var(--gold);}
   .footer-mark{
-    font-family:var(--cormorant);font-weight:700;font-size:96px;letter-spacing:8px;
-    text-align:center;color:#231E19;padding:40px 0 20px;user-select:none;
+    display:flex;flex-direction:column;align-items:center;gap:14px;
+    text-align:center;color:#231E19;padding:48px 0 28px;user-select:none;
   }
+  .footer-mark .slogan{font-family:var(--cormorant);font-weight:600;font-size:18px;letter-spacing:6px;color:#8B8275;}
   .footer-bottom{
     max-width:var(--maxw);margin:0 auto;padding:24px 120px;
     display:flex;justify-content:space-between;font-size:13px;color:#8B8275;flex-wrap:wrap;gap:12px;
@@ -336,7 +340,14 @@
       <h2 class="sec-title">业务版图</h2>
     </div>
     <div class="row">
-      <div class="img"><img src="assets/images/biz-maternal.jpg"  loading="lazy" onerror="this.remove()" alt="母婴营养"></div>
+      <div class="img biz-icon">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h20v8H22z"/>
+          <path d="M24 20h16v30a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z"/>
+          <path d="M24 34h16M24 41h16"/>
+        </svg>
+        <span class="biz-cap">母婴营养</span>
+      </div>
       <div class="txt">
         <h3>母婴营养</h3>
         <p>婴幼儿奶粉、辅食与营养品，合作圣元、杰赋、健敏思等品牌。</p>
@@ -344,7 +355,12 @@
       </div>
     </div>
     <div class="row reverse">
-      <div class="img"><img src="assets/images/biz-family.jpg"  loading="lazy" onerror="this.remove()" alt="家庭日护"></div>
+      <div class="img biz-icon">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 10c9 11 15 19 15 27a15 15 0 0 1-30 0c0-8 6-16 15-27z"/>
+        </svg>
+        <span class="biz-cap">家庭日护</span>
+      </div>
       <div class="txt">
         <h3>家庭日护</h3>
         <p>湿巾、卫生巾等家庭日常护理，自有品牌「水滴妈咪」守护。</p>
@@ -352,7 +368,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="img"><img src="assets/images/biz-adult.jpg"  loading="lazy" onerror="this.remove()" alt="成人营养"></div>
+      <div class="img biz-icon">
+        <svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 50l15-22 11 14 7-9 15 17z"/>
+        </svg>
+        <span class="biz-cap">成人营养</span>
+      </div>
       <div class="txt">
         <h3>成人营养</h3>
         <p>成人奶粉与驼奶，自有品牌「驼峰之巅」，服务全家健康。</p>
@@ -546,7 +567,10 @@
       <a href="#contact">商务合作</a>
     </div>
   </div>
-  <div class="footer-mark"><img src="assets/images/logo.png" alt="四久时 SIJIUSHI" style="height:60px;width:auto;opacity:.65;"></div>
+  <div class="footer-mark">
+    <img src="assets/images/logo.png" alt="四久时 SIJIUSHI" style="height:60px;width:auto;opacity:.65;">
+    <span class="slogan">诚信共赢 · 追求极致</span>
+  </div>
   <div class="footer-bottom">
     <span>© 2026 四久时 SIJIUSHI · 保留所有权利。</span>
     <span>母婴营养 · 家庭日护 · 成人营养</span>
