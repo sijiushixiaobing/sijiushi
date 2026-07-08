@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四久时 SIJIUSHI · 品牌电商孵化伙伴</title>
+<meta name="description" content="四久时（SIJIUSHI）深耕电商渠道，从母婴客群起步，陪伴合作品牌在母婴营养、家庭日护与成人营养赛道从 0 到 1、从 1 到 N。">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#F6F1E8;
+    --espresso:#1E1A16;
+    --ink:#2B2520;
+    --gold:#BFA16A;
+    --muted:#6E655A;
+    --border-light:#E4DCCC;
+    --footer-line:#3A332C;
+    --serif:"Noto Serif SC",serif;
+    --sans:"Noto Sans SC",sans-serif;
+    --cormorant:"Cormorant Garamond",serif;
+    --maxw:1440px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--ivory);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 120px;}
+  .eyebrow{
+    font-family:var(--cormorant);
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:2px;
+    color:var(--gold);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  .sec-title{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:40px;
+    line-height:1.25;
+    color:var(--ink);
+  }
+  .link-gold{
+    color:var(--gold);
+    font-weight:500;
+    font-size:15px;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:8px;
+    transition:opacity .2s;
+  }
+  .link-gold:hover{opacity:.7;}
+  section{padding:110px 0;}
+  .dark{background:var(--espresso);color:#EDE7DC;}
+  .dark .sec-title{color:#F6F1E8;}
+  .dark .eyebrow{color:var(--gold);}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,241,232,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border-light);
+  }
+  .header-inner{
+    max-width:var(--maxw);margin:0 auto;
+    height:80px;padding:0 120px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{display:flex;align-items:center;text-decoration:none;}
+  .logo img{height:40px;width:auto;display:block;}
+  @media(max-width:860px){ .logo img{height:34px;} }
+  @media(max-width:520px){ .logo img{height:28px;} }
+  nav{display:flex;gap:30px;}
+  nav a{color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s;}
+  nav a:hover{color:var(--gold);}
+  .btn-gold{
+    background:var(--gold);color:#1E1A16;
+    font-family:var(--sans);font-weight:700;font-size:14px;
+    border:none;border-radius:2px;padding:11px 22px;cursor:pointer;
+    text-decoration:none;display:inline-block;transition:opacity .2s;
+  }
+  .btn-gold:hover{opacity:.85;}
+  .menu-btn{display:none;background:none;border:none;font-size:26px;color:var(--ink);cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--espresso);color:#EDE7DC;padding:0;}
+  .hero .wrap{
+    display:flex;align-items:center;gap:72px;min-height:780px;padding-top:110px;padding-bottom:110px;
+  }
+  .hero-left{flex:1;max-width:608px;}
+  .hero .eyebrow{color:var(--gold);}
+  .hero h1{
+    font-family:var(--serif);font-weight:700;font-size:56px;line-height:1.2;
+    color:#F6F1E8;margin-bottom:28px;
+  }
+  .hero p{font-size:18px;color:#C9C0B2;line-height:1.9;margin-bottom:36px;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-outline{
+    border:1px solid var(--gold);color:var(--gold);
+    background:transparent;border-radius:2px;padding:11px 24px;
+    font-weight:500;font-size:14px;text-decoration:none;transition:background .2s,color .2s;
+  }
+  .btn-outline:hover{background:var(--gold);color:#1E1A16;}
+  .hero-img{
+    width:520px;height:560px;flex-shrink:0;border-radius:4px;overflow:hidden;
+    background:linear-gradient(135deg,#241F19,#3a2e22 70%,#BFA16A22);
+  }
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  /* ---------- About ---------- */
+  .about .wrap{display:flex;align-items:center;gap:80px;}
+  .about-img{width:540px;height:460px;flex-shrink:0;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#EDE6D8,#D8CDB8);}
+  .about-img img{width:100%;height:100%;object-fit:cover;}
+  .about-right{flex:1;}
+  .about-right p{font-size:17px;color:var(--muted);line-height:1.95;margin-bottom:8px;}
+
+  /* ---------- Business ---------- */
+  .business .head{margin-bottom:56px;}
+  .row{display:flex;align-items:center;gap:64px;margin-bottom:72px;}
+  .row:last-child{margin-bottom:0;}
+  .row .img{width:560px;height:380px;flex-shrink:0;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#EDE6D8,#D8CDB8);}
+  .row .img img{width:100%;height:100%;object-fit:cover;}
+  .row.reverse{flex-direction:row-reverse;}
+  .row .txt{flex:1;}
+  .row .txt h3{font-family:var(--serif);font-weight:700;font-size:28px;color:var(--ink);margin-bottom:18px;}
+  .row .txt p{font-size:16px;color:var(--muted);line-height:1.9;}
+
+  /* ---------- Testimonials ---------- */
+  .testi .head{margin-bottom:48px;}
+  .t-grid{display:flex;gap:32px;}
+  .t-card{
+    flex:1;background:rgba(255,255,255,.04);
+    border:1px solid rgba(191,161,106,.28);border-radius:4px;
+    padding:40px;
+  }
+  .t-card .quote{font-family:var(--serif);font-size:20px;line-height:1.85;color:#EDE7DC;margin-bottom:24px;}
+  .t-card .who{font-size:14px;color:var(--gold);letter-spacing:.5px;}
+
+  /* ---------- FAQ ---------- */
+  .faq .head{margin-bottom:40px;}
+  .faq-list{max-width:1000px;}
+  details{border-bottom:1px solid var(--border-light);padding:24px 0;}
+  summary{
+    list-style:none;cursor:pointer;
+    font-family:var(--serif);font-weight:700;font-size:19px;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;gap:20px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary .plus{color:var(--gold);font-size:22px;font-weight:400;transition:transform .2s;}
+  details[open] summary .plus{transform:rotate(45deg);}
+  details p{font-size:16px;color:var(--muted);line-height:1.9;margin-top:16px;max-width:900px;}
+
+  /* ---------- Team ---------- */
+  .team .head{margin-bottom:48px;}
+  .team-grid{display:flex;gap:24px;flex-wrap:wrap;}
+  .t-member{
+    flex:1;min-width:240px;background:#fff;border-radius:4px;padding:32px;
+    border:1px solid var(--border-light);
+  }
+  .t-member .avatar{
+    width:64px;height:64px;border-radius:50%;background:var(--ivory);
+    border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-weight:700;font-size:24px;color:var(--gold);margin-bottom:24px;
+  }
+  .t-member h4{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:6px;}
+  .t-member .role{color:var(--gold);font-size:14px;margin-bottom:16px;}
+  .t-member .note{color:var(--muted);font-size:13px;line-height:1.8;}
+
+  /* ---------- Model ---------- */
+  .model .head{margin-bottom:48px;}
+  .model-grid{display:flex;gap:24px;flex-wrap:wrap;}
+  .m-card{flex:1;min-width:280px;background:#fff;border-radius:4px;padding:36px;border:1px solid var(--border-light);}
+  .m-card .num{font-family:var(--cormorant);font-weight:700;font-size:40px;color:var(--gold);margin-bottom:16px;}
+  .m-card h4{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:14px;}
+  .m-card p{color:var(--muted);font-size:15px;line-height:1.85;}
+
+  /* ---------- Cases ---------- */
+  .cases .head{margin-bottom:48px;}
+  .case-grid{display:flex;gap:24px;flex-wrap:wrap;}
+  .case-card{flex:1;min-width:320px;background:#fff;border-radius:4px;padding:40px;border:1px solid var(--border-light);}
+  .case-card .brand{font-family:var(--serif);font-weight:700;font-size:24px;color:var(--ink);margin-bottom:8px;}
+  .case-card .metric{font-family:var(--serif);font-weight:700;font-size:44px;color:var(--gold);line-height:1.1;margin:8px 0 16px;}
+  .case-card .desc{color:var(--muted);font-size:15px;line-height:1.85;}
+
+  /* ---------- Future ---------- */
+  .future .head{margin-bottom:48px;}
+  .future-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .f-card{background:#fff;border-radius:4px;padding:36px;border:1px solid var(--border-light);}
+  .f-card h4{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:14px;}
+  .f-card p{color:var(--muted);font-size:15px;line-height:1.85;}
+
+  /* ---------- Happy ---------- */
+  .happy .head{margin-bottom:48px;}
+  .happy-grid{display:flex;gap:24px;flex-wrap:wrap;}
+  .h-card{flex:1;min-width:280px;background:#fff;border-radius:4px;padding:36px;border:1px solid var(--border-light);}
+  .h-card h4{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:14px;}
+  .h-card p{color:var(--muted);font-size:15px;line-height:1.85;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--espresso);color:#C9C0B2;padding:80px 0 0;}
+  .footer-top{
+    max-width:var(--maxw);margin:0 auto;padding:0 120px;
+    display:flex;justify-content:space-between;gap:60px;flex-wrap:wrap;
+    padding-bottom:56px;border-bottom:1px solid var(--footer-line);
+  }
+  .footer-brand{max-width:320px;}
+  .footer-brand .cn{font-family:var(--serif);font-weight:700;font-size:24px;color:#F6F1E8;}
+  .footer-brand .en{font-family:var(--cormorant);font-weight:600;letter-spacing:3px;color:var(--gold);font-size:15px;margin:4px 0 16px;}
+  .footer-brand p{font-size:14px;line-height:1.8;color:#A89E8F;}
+  .footer-col h5{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--gold);margin-bottom:18px;}
+  .footer-col a{display:block;color:#C9C0B2;text-decoration:none;font-size:14px;margin-bottom:12px;transition:color .2s;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-mark{
+    font-family:var(--cormorant);font-weight:700;font-size:96px;letter-spacing:8px;
+    text-align:center;color:#231E19;padding:40px 0 20px;user-select:none;
+  }
+  .footer-bottom{
+    max-width:var(--maxw);margin:0 auto;padding:24px 120px;
+    display:flex;justify-content:space-between;font-size:13px;color:#8B8275;flex-wrap:wrap;gap:12px;
+  }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:1080px){
+    .wrap,.header-inner,.footer-top,.footer-bottom{padding-left:48px;padding-right:48px;}
+    .hero .wrap{gap:48px;}
+    .about .wrap{gap:48px;}
+  }
+  @media (max-width:860px){
+    nav{display:none;}
+    .menu-btn{display:block;}
+    .hero .wrap{flex-direction:column;min-height:auto;padding-top:64px;padding-bottom:64px;}
+    .hero-img{width:100%;height:360px;}
+    .hero h1{font-size:40px;}
+    .about .wrap{flex-direction:column;align-items:stretch;}
+    .about-img{width:100%;height:300px;}
+    .row,.row.reverse{flex-direction:column;gap:28px;margin-bottom:48px;}
+    .row .img{width:100%;height:260px;}
+    .t-grid{flex-direction:column;}
+    .future-grid{grid-template-columns:1fr;}
+    .team-grid,.model-grid,.case-grid,.happy-grid{flex-direction:column;}
+    .footer-mark{font-size:56px;letter-spacing:4px;}
+    section{padding:72px 0;}
+    .sec-title{font-size:32px;}
+  }
+  @media (max-width:520px){
+    .wrap,.header-inner,.footer-top,.footer-bottom{padding-left:24px;padding-right:24px;}
+    .hero h1{font-size:32px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#home" class="logo"><img src="assets/images/logo.png" alt="四久时 SIJIUSHI 电商孵化平台"></a>
+    <nav>
+      <a href="#home">首页</a>
+      <a href="#business">业务版图</a>
+      <a href="#about">关于我们</a>
+      <a href="#team">团队</a>
+      <a href="#contact">联系</a>
+    </nav>
+    <a href="#contact" class="btn-gold">合作咨询</a>
+    <button class="menu-btn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="eyebrow">SIJIUSHI · 四久时</div>
+      <h1>以孵化之心，做长期主义的品牌伙伴</h1>
+      <p>四久时深耕电商渠道，从母婴客群起步，陪伴合作品牌在母婴营养、家庭日护与成人营养赛道，从 0 到 1、从 1 到 N。</p>
+      <div class="hero-cta">
+        <a href="#business" class="btn-gold">了解我们的业务 →</a>
+        <a href="#cases" class="btn-outline">查看合作案例</a>
+      </div>
+    </div>
+    <div class="hero-img"><img src="assets/images/hero.jpg"  loading="lazy" onerror="this.remove()" alt="四久时 母婴营养品牌"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-img"><img src="assets/images/brand.jpg"  loading="lazy" onerror="this.remove()" alt="四久时 团队"></div>
+    <div class="about-right">
+      <div class="eyebrow">ABOUT US · 企业概述</div>
+      <h2 class="sec-title">关于四久时</h2>
+      <p style="margin-top:24px;">四久时创建于 2019 年，扎根电商渠道，从母婴客群起步，成长为全家营养与舒适生活的健康服务专家。</p>
+      <p>「四久时」：四，拥抱更多伙伴；久，愿更长久；时，以坚持走更远的路。</p>
+      <a href="#business" class="link-gold">查看业务范围 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="business" id="business">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">BUSINESS SCOPE · 业务范围</div>
+      <h2 class="sec-title">业务版图</h2>
+    </div>
+    <div class="row">
+      <div class="img"><img src="assets/images/biz-maternal.jpg"  loading="lazy" onerror="this.remove()" alt="母婴营养"></div>
+      <div class="txt">
+        <h3>母婴营养</h3>
+        <p>婴幼儿奶粉、辅食与营养品，合作圣元、杰赋、健敏思等品牌。</p>
+        <a href="#contact" class="link-gold">了解业务 →</a>
+      </div>
+    </div>
+    <div class="row reverse">
+      <div class="img"><img src="assets/images/biz-family.jpg"  loading="lazy" onerror="this.remove()" alt="家庭日护"></div>
+      <div class="txt">
+        <h3>家庭日护</h3>
+        <p>湿巾、卫生巾等家庭日常护理，自有品牌「水滴妈咪」守护。</p>
+        <a href="#contact" class="link-gold">了解业务 →</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="img"><img src="assets/images/biz-adult.jpg"  loading="lazy" onerror="this.remove()" alt="成人营养"></div>
+      <div class="txt">
+        <h3>成人营养</h3>
+        <p>成人奶粉与驼奶，自有品牌「驼峰之巅」，服务全家健康。</p>
+        <a href="#contact" class="link-gold">了解业务 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark testi">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">TESTIMONIALS · 客户之声</div>
+      <h2 class="sec-title">他们的声音</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card">
+        <p class="quote">“四久时的孵化小组真正懂母婴用户。双11 大促 GMV 同比增长 110%，这样的爆发力超出我们的预期。”</p>
+        <div class="who">圣元营养 · 合作负责人</div>
+      </div>
+      <div class="t-card">
+        <p class="quote">“从选品到客服，响应快、专业度高。天猫母婴类目五星店铺的口碑，是大家一起做出来的。”</p>
+        <div class="who">维丽海斯 · 店铺运营</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">FAQ · 常见问题</div>
+      <h2 class="sec-title">常见问题</h2>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>四久时主要做哪些业务？<span class="plus">+</span></summary>
+        <p>聚焦母婴营养、家庭日护与成人营养三大方向，提供电商孵化、运营与供应链服务。</p>
+      </details>
+      <details>
+        <summary>你们和品牌是怎么合作的？<span class="plus">+</span></summary>
+        <p>以「品牌孵化小组」为核心，整合运营、供应链与客服，在小组内快速决策、数据闭环。</p>
+      </details>
+      <details>
+        <summary>四久时成立于什么时候？<span class="plus">+</span></summary>
+        <p>2019 年，从母婴客群起步，逐步拓展到全家营养与舒适生活。</p>
+      </details>
+      <details>
+        <summary>你们有哪些自有品牌？<span class="plus">+</span></summary>
+        <p>家庭日护自有品牌「水滴妈咪」、成人营养自有品牌「驼峰之巅」。</p>
+      </details>
+      <details>
+        <summary>合作品牌包含哪些？<span class="plus">+</span></summary>
+        <p>圣元、杰赋、健敏思、爷爷的农场等。</p>
+      </details>
+      <details>
+        <summary>如何开始合作？<span class="plus">+</span></summary>
+        <p>通过页面底部「合作洽谈」联系我们，我们会安排专人对接。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">OUR TEAM · 团队介绍</div>
+      <h2 class="sec-title">一群把品牌当作品的人</h2>
+      <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1000px;">四久时由母婴行业资深从业者创立，汇聚品牌、运营、供应链与客服的多面手，陪伴每一个合作品牌从 0 到 1、从 1 到 N。</p>
+    </div>
+    <div class="team-grid">
+      <div class="t-member"><div class="avatar">王</div><h4>王一嵛</h4><div class="role">创始人 · 总经理</div><p class="note">深耕母婴与营养行业十余年，定义四久时的品牌孵化方法论。</p></div>
+      <div class="t-member"><div class="avatar">刘</div><h4>刘杨</h4><div class="role">联合创始人</div><p class="note">统筹运营与供应链，让好产品稳定、高效地抵达用户。</p></div>
+      <div class="t-member"><div class="avatar">蒋</div><h4>蒋小红</h4><div class="role">合伙人</div><p class="note">负责客户成功，把每一次服务都做成长期关系。</p></div>
+      <div class="t-member"><div class="avatar">秦</div><h4>秦静涛</h4><div class="role">合伙人</div><p class="note">专注数据与增长，用复盘驱动每一个品牌的下一程。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="model">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">OPERATING MODEL · 运营模式</div>
+      <h2 class="sec-title">以品牌为核的孵化小组</h2>
+      <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">打破部门壁垒，组建以具体品牌或店铺为核心的「品牌孵化小组」，整合运营、供应链与客服资源，在小组内即时沟通、快速决策，以 GMV、转化率与满意度为闭环，实现持续增长。</p>
+    </div>
+    <div class="model-grid">
+      <div class="m-card"><div class="num">01</div><h4>整合资源</h4><p>运营、供应链与客服同处一个小组，资源随需调配。</p></div>
+      <div class="m-card"><div class="num">02</div><h4>快速决策</h4><p>一线信息在小组内即时同步，省去层层流转。</p></div>
+      <div class="m-card"><div class="num">03</div><h4>数据闭环</h4><p>以 GMV、转化率与满意度衡量，复盘驱动下一程。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="cases">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">CASE STUDIES · 案例展示</div>
+      <h2 class="sec-title">陪品牌跑出的真实成绩</h2>
+      <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">从母婴到全家营养，我们用同一套孵化方法论，帮合作品牌拿到可量化的增长。</p>
+    </div>
+    <div class="case-grid">
+      <div class="case-card"><div class="brand">圣元营养</div><div class="metric">+110%</div><div class="desc">双11 大促 GMV 同比增长，单月爆发力验证孵化小组的协同效率。</div></div>
+      <div class="case-card"><div class="brand">维丽海斯</div><div class="metric">五星店铺</div><div class="desc">天猫母婴类目五星店铺，用户口碑与服务体验长期领跑。</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="future">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">FUTURE · 未来规划</div>
+      <h2 class="sec-title">四条主线，走向更长坡厚雪</h2>
+    </div>
+    <div class="future-grid">
+      <div class="f-card"><h4>技术创新赋能</h4><p>用数据与技术重构选品、投放与履约，让决策更聪明。</p></div>
+      <div class="f-card"><h4>用户体验升级</h4><p>把服务做进每一个细节，让信任沉淀为复购。</p></div>
+      <div class="f-card"><h4>精细化运营深耕</h4><p>在存量市场里找增量，把每个环节打磨到极致。</p></div>
+      <div class="f-card"><h4>AI 全域应用</h4><p>让 AI 贯穿经营全流程，从洞察到执行提效。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="happy">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">HAPPY MOMENTS · 欢乐瞬间</div>
+      <h2 class="sec-title">认真做事，也认真生活</h2>
+      <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">我们相信，好的团队文化，是做出好生意的底色。</p>
+    </div>
+    <div class="happy-grid">
+      <div class="h-card"><h4>季度团建</h4><p>走出办公室，把心聚在一起，再带着劲头回来。</p></div>
+      <div class="h-card"><h4>生日与节日</h4><p>平凡日子里的仪式感，让团队更有温度。</p></div>
+      <div class="h-card"><h4>客户答谢</h4><p>和伙伴一起庆祝成长，把合作变成长期关系。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/images/logo.png" alt="四久时 SIJIUSHI" style="height:48px;width:auto;margin-bottom:12px;opacity:.9;">
+      <p>陪伴每一个品牌，从 0 到 1、从 1 到 N。</p>
+    </div>
+    <div class="footer-col">
+      <h5>业务版图</h5>
+      <a href="#business">母婴营养</a>
+      <a href="#business">家庭日护</a>
+      <a href="#business">成人营养</a>
+    </div>
+    <div class="footer-col">
+      <h5>关于我们</h5>
+      <a href="#about">企业概述</a>
+      <a href="#team">团队介绍</a>
+      <a href="#model">运营模式</a>
+    </div>
+    <div class="footer-col">
+      <h5>联系我们</h5>
+      <a href="#contact">客户服务</a>
+      <a href="#contact">合作洽谈</a>
+      <a href="#contact">商务合作</a>
+    </div>
+  </div>
+  <div class="footer-mark"><img src="assets/images/logo.png" alt="四久时 SIJIUSHI" style="height:36px;width:auto;opacity:.7;"></div>
+  <div class="footer-bottom">
+    <span>© 2026 四久时 SIJIUSHI · 保留所有权利。</span>
+    <span>母婴营养 · 家庭日护 · 成人营养</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  document.querySelector('.menu-btn').addEventListener('click', function(){
+    const nav = document.querySelector('nav');
+    nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    nav.style.position='absolute';nav.style.top='80px';nav.style.left='0';nav.style.right='0';
+    nav.style.flexDirection='column';nav.style.background='var(--ivory)';nav.style.padding='20px 48px';nav.style.gap='16px';
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12});
+  document.querySelectorAll('section').forEach(s=>{ s.classList.add('reveal'); io.observe(s); });
+</script>
+</body>
+</html>
