@@ -390,6 +390,66 @@
   /* ---------- Nav active ---------- */
   nav a.active{color:var(--gold);}
 
+  /* ---------- Metrics band (social proof) ---------- */
+  .metrics{background:var(--ivory);padding:0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);}
+  .metrics .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .metric{text-align:center;padding:58px 20px;border-right:1px solid var(--border-light);}
+  .metric:last-child{border-right:none;}
+  .metric .num{font-family:var(--serif);font-weight:700;font-size:48px;color:var(--gold);line-height:1;letter-spacing:1px;}
+  .metric .lbl{font-size:15px;color:var(--muted);margin-top:14px;letter-spacing:.5px;}
+  @media(max-width:860px){
+    .metrics .wrap{grid-template-columns:repeat(2,1fr);}
+    .metric:nth-child(2){border-right:none;}
+    .metric:nth-child(1),.metric:nth-child(2){border-bottom:1px solid var(--border-light);}
+  }
+  @media(max-width:520px){
+    .metrics .wrap{grid-template-columns:1fr;}
+    .metric{border-right:none;border-bottom:1px solid var(--border-light);}
+    .metric:last-child{border-bottom:none;}
+  }
+
+  /* ---------- Header scrolled state ---------- */
+  header.scrolled{box-shadow:0 12px 34px -18px rgba(30,26,22,.5);}
+  @media(max-width:860px){ header.scrolled{box-shadow:none;} }
+
+  /* ---------- Testimonial quote mark ---------- */
+  .t-card{position:relative;}
+  .t-card::before{
+    content:"\201C";position:absolute;top:14px;left:26px;
+    font-family:var(--cormorant);font-weight:700;font-size:88px;line-height:1;
+    color:rgba(191,161,106,.28);pointer-events:none;
+  }
+  .t-card .quote{position:relative;z-index:1;padding-top:22px;}
+
+  /* ---------- Business icon badge ---------- */
+  .row .img.biz-icon .badge{
+    width:150px;height:150px;border-radius:50%;
+    background:rgba(191,161,106,.1);border:1px solid rgba(191,161,106,.32);
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .4s ease,background .4s ease;
+  }
+  .row .img.biz-icon:hover .badge{transform:scale(1.06);background:rgba(191,161,106,.16);}
+  .row .img.biz-icon svg{width:74px;height:74px;}
+
+  /* ---------- Hero scroll cue ---------- */
+  .hero-scroll{
+    position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+    color:#8B8275;font-size:11px;letter-spacing:3px;z-index:1;
+  }
+  .hero-scroll .line{
+    width:1px;height:36px;background:linear-gradient(var(--gold),transparent);
+    animation:scrolldown 1.8s ease-in-out infinite;transform-origin:top;
+  }
+  @keyframes scrolldown{
+    0%{transform:scaleY(0);transform-origin:top;}
+    50%{transform:scaleY(1);transform-origin:top;}
+    50.1%{transform:scaleY(1);transform-origin:bottom;}
+    100%{transform:scaleY(0);transform-origin:bottom;}
+  }
+  @media(max-width:860px){ .hero-scroll{display:none;} }
+  @media (prefers-reduced-motion: reduce){ .hero-scroll .line{animation:none;} }
+
   /* ---------- Responsive additions ---------- */
   @media (max-width:860px){
     .bento{grid-template-columns:1fr 1fr;}
@@ -475,13 +535,23 @@
     </div>
     <div class="hero-img"><img src="assets/images/hero.jpg"  loading="lazy" onerror="this.remove()" alt="四久时 母婴营养品牌"></div>
   </div>
+  <div class="hero-scroll"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<section class="metrics">
+  <div class="wrap">
+    <div class="metric"><div class="num">2019</div><div class="lbl">品牌创立年份</div></div>
+    <div class="metric"><div class="num">5+</div><div class="lbl">深度合作品牌</div></div>
+    <div class="metric"><div class="num">+110%</div><div class="lbl">大促 GMV 增长</div></div>
+    <div class="metric"><div class="num">3</div><div class="lbl">大核心业务赛道</div></div>
+  </div>
 </section>
 
 <section class="about grain-light" id="about">
   <div class="wrap">
     <div class="about-img"><img src="assets/images/brand.jpg"  loading="lazy" onerror="this.remove()" alt="四久时 团队"></div>
     <div class="about-right">
-      <div class="eyebrow">ABOUT US · 企业概述</div>
+      <div class="eyebrow">01 · ABOUT US · 企业概述</div>
       <h2 class="sec-title">关于四久时</h2>
       <p style="margin-top:24px;">四久时创建于 2019 年，扎根电商渠道，从母婴客群起步，成长为全家营养与舒适生活的健康服务专家。</p>
       <p>「四久时」：四，拥抱更多伙伴；久，愿更长久；时，以坚持走更远的路。</p>
@@ -493,16 +563,16 @@
 <section class="business" id="business">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">BUSINESS SCOPE · 业务范围</div>
+      <div class="eyebrow">02 · BUSINESS SCOPE · 业务范围</div>
       <h2 class="sec-title">业务版图</h2>
     </div>
     <div class="row">
       <div class="img biz-icon">
-        <svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <div class="badge"><svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 12h20v8H22z"/>
           <path d="M24 20h16v30a4 4 0 0 1-4 4H28a4 4 0 0 1-4-4z"/>
           <path d="M24 34h16M24 41h16"/>
-        </svg>
+        </svg></div>
         <span class="biz-cap">母婴营养</span>
       </div>
       <div class="txt">
@@ -513,9 +583,9 @@
     </div>
     <div class="row reverse">
       <div class="img biz-icon">
-        <svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <div class="badge"><svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <path d="M32 10c9 11 15 19 15 27a15 15 0 0 1-30 0c0-8 6-16 15-27z"/>
-        </svg>
+        </svg></div>
         <span class="biz-cap">家庭日护</span>
       </div>
       <div class="txt">
@@ -526,9 +596,9 @@
     </div>
     <div class="row">
       <div class="img biz-icon">
-        <svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <div class="badge"><svg viewBox="0 0 64 64" fill="none" stroke="#BFA16A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <path d="M8 50l15-22 11 14 7-9 15 17z"/>
-        </svg>
+        </svg></div>
         <span class="biz-cap">成人营养</span>
       </div>
       <div class="txt">
@@ -543,7 +613,7 @@
 <section class="dark testi">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">TESTIMONIALS · 客户之声</div>
+      <div class="eyebrow">03 · TESTIMONIALS · 客户之声</div>
       <h2 class="sec-title">他们的声音</h2>
     </div>
     <div class="t-grid">
@@ -562,7 +632,7 @@
 <section class="faq">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">FAQ · 常见问题</div>
+      <div class="eyebrow">04 · FAQ · 常见问题</div>
       <h2 class="sec-title">常见问题</h2>
     </div>
     <div class="faq-list">
@@ -597,7 +667,7 @@
 <section class="team">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">OUR TEAM · 团队介绍</div>
+      <div class="eyebrow">05 · OUR TEAM · 团队介绍</div>
       <h2 class="sec-title">一群把品牌当作品的人</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1000px;">四久时由母婴行业资深从业者创立，汇聚品牌、运营、供应链与客服的多面手，陪伴每一个合作品牌从 0 到 1、从 1 到 N。</p>
     </div>
@@ -625,7 +695,7 @@
 <section class="model">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">OPERATING MODEL · 运营模式</div>
+      <div class="eyebrow">06 · OPERATING MODEL · 运营模式</div>
       <h2 class="sec-title">以品牌为核的孵化小组</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">打破部门壁垒，组建以具体品牌或店铺为核心的「品牌孵化小组」，整合运营、供应链与客服资源，在小组内即时沟通、快速决策，以 GMV、转化率与满意度为闭环，实现持续增长。</p>
     </div>
@@ -640,7 +710,7 @@
 <section class="cases grain-light" id="cases">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">CASE STUDIES · 案例展示</div>
+      <div class="eyebrow">07 · CASE STUDIES · 案例展示</div>
       <h2 class="sec-title">陪品牌跑出的真实成绩</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">从母婴到全家营养，我们用同一套孵化方法论，帮合作品牌拿到可量化的增长。</p>
     </div>
@@ -654,7 +724,7 @@
 <section class="future">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">FUTURE · 未来规划</div>
+      <div class="eyebrow">08 · FUTURE · 未来规划</div>
       <h2 class="sec-title">四条主线，走向更长坡厚雪</h2>
     </div>
     <div class="bento stagger">
@@ -670,7 +740,7 @@
 <section class="happy">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">HAPPY MOMENTS · 欢乐瞬间</div>
+      <div class="eyebrow">09 · HAPPY MOMENTS · 欢乐瞬间</div>
       <h2 class="sec-title">认真做事，也认真生活</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">我们相信，好的团队文化，是做出好生意的底色。</p>
     </div>
@@ -685,7 +755,7 @@
 <section class="dark follow" id="follow">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">FOLLOW US · 关注我们</div>
+      <div class="eyebrow">10 · FOLLOW US · 关注我们</div>
       <h2 class="sec-title">在更多平台找到四久时</h2>
     </div>
     <div class="qr-grid stagger">
@@ -768,6 +838,12 @@
     nav.style.position='absolute';nav.style.top='80px';nav.style.left='0';nav.style.right='0';
     nav.style.flexDirection='column';nav.style.background='var(--ivory)';nav.style.padding='20px 48px';nav.style.gap='16px';
   });
+
+  // Header scrolled state
+  const header = document.querySelector('header');
+  const onScroll = ()=> header.classList.toggle('scrolled', window.scrollY > 20);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
 
   // Scroll reveal
   const io = new IntersectionObserver((entries)=>{
