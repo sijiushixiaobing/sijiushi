@@ -113,14 +113,17 @@
   }
   .btn-outline:hover{background:var(--gold);color:#1E1A16;}
   .hero-img{
-    width:560px;flex-shrink:0;border-radius:4px;overflow:hidden;aspect-ratio:4/3;
+    width:560px;flex-shrink:0;border-radius:6px;overflow:hidden;
+    border:1px solid rgba(191,161,106,.35);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.65);
     background:linear-gradient(135deg,#241F19,#3a2e22 70%,#BFA16A22);
+    aspect-ratio:4/3;
   }
   .hero-img img{width:100%;height:100%;object-fit:contain;display:block;}
 
   /* ---------- About ---------- */
   .about .wrap{display:flex;align-items:center;gap:80px;}
-  .about-img{width:540px;height:460px;flex-shrink:0;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#EDE6D8,#D8CDB8);}
+  .about-img{width:540px;height:460px;flex-shrink:0;border-radius:6px;overflow:hidden;border:1px solid rgba(191,161,106,.3);box-shadow:0 26px 50px -28px rgba(46,37,28,.45);background:linear-gradient(135deg,#EDE6D8,#D8CDB8);}
   .about-img img{width:100%;height:100%;object-fit:cover;}
   .about-right{flex:1;}
   .about-right p{font-size:17px;color:var(--muted);line-height:1.95;margin-bottom:8px;}
@@ -258,6 +261,89 @@
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.in{opacity:1;transform:none;}
 
+  /* ---------- Atmosphere / depth ---------- */
+  .hero{position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;top:-20%;right:-8%;width:58%;height:120%;z-index:0;background:radial-gradient(closest-side, rgba(191,161,106,.16), transparent 70%);pointer-events:none;}
+  .hero .wrap{position:relative;z-index:1;}
+  .dark{position:relative;overflow:hidden;}
+  .dark::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px);background-size:3px 3px;}
+  .dark .wrap{position:relative;z-index:1;}
+  .grain-light{position:relative;}
+  .grain-light::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.4;background-image:radial-gradient(rgba(46,37,28,.045) 1px, transparent 1px);background-size:3px 3px;}
+  .grain-light .wrap{position:relative;z-index:1;}
+
+  /* ---------- Hero trust strip ---------- */
+  .hero-trust{margin-top:42px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .hero-trust-label{font-family:var(--cormorant);font-weight:600;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+  .hero-trust-logos{display:flex;gap:22px;flex-wrap:wrap;}
+  .hero-trust-logos span{font-family:var(--serif);font-weight:700;font-size:16px;color:#C9C0B2;opacity:.85;letter-spacing:1px;}
+
+  /* ---------- Card elevation ---------- */
+  .t-member,.m-card,.case-card,.f-card,.h-card{
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .t-member:hover,.m-card:hover,.case-card:hover,.f-card:hover,.h-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px -22px rgba(46,37,28,.4);
+    border-color:rgba(191,161,106,.5);
+  }
+  .t-member .avatar{
+    background:linear-gradient(135deg,#F6F1E8,#E4DCCC);
+    box-shadow:0 0 0 4px rgba(191,161,106,.12);
+  }
+
+  /* ---------- Future bento ---------- */
+  .bento{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-auto-rows:minmax(172px,auto);gap:20px;}
+  .bento > div{background:#fff;border-radius:4px;padding:34px;border:1px solid var(--border-light);transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;}
+  .bento > div:hover{transform:translateY(-6px);box-shadow:0 18px 40px -22px rgba(46,37,28,.4);border-color:rgba(191,161,106,.5);}
+  .bento .num{font-family:var(--cormorant);font-weight:700;font-size:34px;color:var(--gold);margin-bottom:12px;}
+  .bento-a{grid-column:1/2;grid-row:1/3;background:var(--espresso)!important;color:#EDE7DC;border-color:#3A332C!important;display:flex;flex-direction:column;justify-content:center;}
+  .bento-a h4{color:#F6F1E8;}
+  .bento-a p{color:#C9C0B2;}
+  .bento-b{grid-column:2/4;grid-row:1/2;}
+  .bento-c{grid-column:2/3;grid-row:2/3;}
+  .bento-d{grid-column:3/4;grid-row:2/3;}
+  .bento-e{grid-column:2/4;grid-row:3/4;}
+
+  /* ---------- Culture band ---------- */
+  .culture-band{display:flex;gap:0;background:linear-gradient(135deg,#FBF7EF,#F1E9D8);border:1px solid var(--border-light);border-radius:4px;overflow:hidden;}
+  .culture-item{flex:1;padding:38px 34px;border-right:1px solid var(--border-light);}
+  .culture-item:last-child{border-right:none;}
+  .culture-item .num{font-family:var(--cormorant);font-weight:700;font-size:30px;color:var(--gold);margin-bottom:10px;}
+  .culture-item h4{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:12px;}
+  .culture-item p{color:var(--muted);font-size:15px;line-height:1.85;}
+
+  /* ---------- Footer wordmark ---------- */
+  .footer-wordmark{font-family:var(--cormorant);font-weight:700;line-height:1;text-align:center;letter-spacing:12px;font-size:clamp(72px,15vw,190px);color:transparent;-webkit-text-stroke:1px rgba(191,161,106,.16);user-select:none;margin-bottom:-4px;}
+
+  /* ---------- Stagger reveal ---------- */
+  .stagger > *{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+  .stagger.in > *{opacity:1;transform:none;}
+  .stagger.in > *:nth-child(2){transition-delay:.08s;}
+  .stagger.in > *:nth-child(3){transition-delay:.16s;}
+  .stagger.in > *:nth-child(4){transition-delay:.24s;}
+  .stagger.in > *:nth-child(5){transition-delay:.32s;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.stagger > *{opacity:1!important;transform:none!important;transition:none!important;}
+  }
+
+  /* ---------- Responsive additions ---------- */
+  @media (max-width:860px){
+    .bento{grid-template-columns:1fr 1fr;}
+    .bento-a,.bento-b,.bento-c,.bento-d,.bento-e{grid-column:auto;grid-row:auto;}
+    .bento-a{grid-column:1/3;}
+    .bento-b{grid-column:1/3;}
+    .bento-e{grid-column:1/3;}
+    .culture-band{flex-direction:column;}
+    .culture-item{border-right:none;border-bottom:1px solid var(--border-light);}
+    .culture-item:last-child{border-bottom:none;}
+  }
+  @media (max-width:520px){
+    .bento{grid-template-columns:1fr;}
+    .bento-a,.bento-b,.bento-c,.bento-d,.bento-e{grid-column:1/2;grid-row:auto;}
+  }
+
   /* ---------- Responsive ---------- */
   @media (max-width:1080px){
     .wrap,.header-inner,.footer-top,.footer-bottom{padding-left:48px;padding-right:48px;}
@@ -315,12 +401,18 @@
         <a href="#business" class="btn-gold">了解我们的业务 →</a>
         <a href="#cases" class="btn-outline">查看合作案例</a>
       </div>
+      <div class="hero-trust">
+        <span class="hero-trust-label">已陪伴孵化</span>
+        <div class="hero-trust-logos">
+          <span>圣元</span><span>杰赋</span><span>健敏思</span><span>爷爷的农场</span><span>维丽海斯</span>
+        </div>
+      </div>
     </div>
     <div class="hero-img"><img src="assets/images/hero.jpg"  loading="lazy" onerror="this.remove()" alt="四久时 母婴营养品牌"></div>
   </div>
 </section>
 
-<section class="about" id="about">
+<section class="about grain-light" id="about">
   <div class="wrap">
     <div class="about-img"><img src="assets/images/brand.jpg"  loading="lazy" onerror="this.remove()" alt="四久时 团队"></div>
     <div class="about-right">
@@ -444,7 +536,7 @@
       <h2 class="sec-title">一群把品牌当作品的人</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1000px;">四久时由母婴行业资深从业者创立，汇聚品牌、运营、供应链与客服的多面手，陪伴每一个合作品牌从 0 到 1、从 1 到 N。</p>
     </div>
-    <div class="team-grid">
+    <div class="team-grid stagger">
       <div class="t-member"><div class="avatar">王</div><h4>王一嵛</h4><div class="role">创始人 · 总经理</div><p class="note">深耕母婴与营养行业十余年，定义四久时的品牌孵化方法论。</p></div>
       <div class="t-member"><div class="avatar">刘</div><h4>刘杨</h4><div class="role">联合创始人</div><p class="note">统筹运营与供应链，让好产品稳定、高效地抵达用户。</p></div>
       <div class="t-member"><div class="avatar">蒋</div><h4>蒋小红</h4><div class="role">合伙人</div><p class="note">负责客户成功，把每一次服务都做成长期关系。</p></div>
@@ -460,7 +552,7 @@
       <h2 class="sec-title">以品牌为核的孵化小组</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">打破部门壁垒，组建以具体品牌或店铺为核心的「品牌孵化小组」，整合运营、供应链与客服资源，在小组内即时沟通、快速决策，以 GMV、转化率与满意度为闭环，实现持续增长。</p>
     </div>
-    <div class="model-grid">
+    <div class="model-grid stagger">
       <div class="m-card"><div class="num">01</div><h4>整合资源</h4><p>运营、供应链与客服同处一个小组，资源随需调配。</p></div>
       <div class="m-card"><div class="num">02</div><h4>快速决策</h4><p>一线信息在小组内即时同步，省去层层流转。</p></div>
       <div class="m-card"><div class="num">03</div><h4>数据闭环</h4><p>以 GMV、转化率与满意度衡量，复盘驱动下一程。</p></div>
@@ -468,14 +560,14 @@
   </div>
 </section>
 
-<section class="cases" id="cases">
+<section class="cases grain-light" id="cases">
   <div class="wrap">
     <div class="head">
       <div class="eyebrow">CASE STUDIES · 案例展示</div>
       <h2 class="sec-title">陪品牌跑出的真实成绩</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">从母婴到全家营养，我们用同一套孵化方法论，帮合作品牌拿到可量化的增长。</p>
     </div>
-    <div class="case-grid">
+    <div class="case-grid stagger">
       <div class="case-card"><div class="brand">圣元营养</div><div class="metric">+110%</div><div class="desc">双11 大促 GMV 同比增长，单月爆发力验证孵化小组的协同效率。</div></div>
       <div class="case-card"><div class="brand">维丽海斯</div><div class="metric">五星店铺</div><div class="desc">天猫母婴类目五星店铺，用户口碑与服务体验长期领跑。</div></div>
     </div>
@@ -488,11 +580,12 @@
       <div class="eyebrow">FUTURE · 未来规划</div>
       <h2 class="sec-title">四条主线，走向更长坡厚雪</h2>
     </div>
-    <div class="future-grid">
-      <div class="f-card"><h4>技术创新赋能</h4><p>用数据与技术重构选品、投放与履约，让决策更聪明。</p></div>
-      <div class="f-card"><h4>用户体验升级</h4><p>把服务做进每一个细节，让信任沉淀为复购。</p></div>
-      <div class="f-card"><h4>精细化运营深耕</h4><p>在存量市场里找增量，把每个环节打磨到极致。</p></div>
-      <div class="f-card"><h4>AI 全域应用</h4><p>让 AI 贯穿经营全流程，从洞察到执行提效。</p></div>
+    <div class="bento stagger">
+      <div class="bento-a"><div class="num">FUTURE</div><h4>走向更长坡厚雪</h4><p>四条主线并行：用技术、体验、精细化与 AI，把每个品牌陪到下一程。</p></div>
+      <div class="bento-b"><div class="num">01</div><h4>技术创新赋能</h4><p>用数据与技术重构选品、投放与履约，让决策更聪明。</p></div>
+      <div class="bento-c"><div class="num">02</div><h4>用户体验升级</h4><p>把服务做进每一个细节，让信任沉淀为复购。</p></div>
+      <div class="bento-d"><div class="num">03</div><h4>精细化运营深耕</h4><p>在存量市场里找增量，把每个环节打磨到极致。</p></div>
+      <div class="bento-e"><div class="num">04</div><h4>AI 全域应用</h4><p>让 AI 贯穿经营全流程，从洞察到执行提效。</p></div>
     </div>
   </div>
 </section>
@@ -504,10 +597,10 @@
       <h2 class="sec-title">认真做事，也认真生活</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1100px;">我们相信，好的团队文化，是做出好生意的底色。</p>
     </div>
-    <div class="happy-grid">
-      <div class="h-card"><h4>季度团建</h4><p>走出办公室，把心聚在一起，再带着劲头回来。</p></div>
-      <div class="h-card"><h4>生日与节日</h4><p>平凡日子里的仪式感，让团队更有温度。</p></div>
-      <div class="h-card"><h4>客户答谢</h4><p>和伙伴一起庆祝成长，把合作变成长期关系。</p></div>
+    <div class="culture-band stagger">
+      <div class="culture-item"><div class="num">01</div><h4>季度团建</h4><p>走出办公室，把心聚在一起，再带着劲头回来。</p></div>
+      <div class="culture-item"><div class="num">02</div><h4>生日与节日</h4><p>平凡日子里的仪式感，让团队更有温度。</p></div>
+      <div class="culture-item"><div class="num">03</div><h4>客户答谢</h4><p>和伙伴一起庆祝成长，把合作变成长期关系。</p></div>
     </div>
   </div>
 </section>
@@ -518,7 +611,7 @@
       <div class="eyebrow">FOLLOW US · 关注我们</div>
       <h2 class="sec-title">在更多平台找到四久时</h2>
     </div>
-    <div class="qr-grid">
+    <div class="qr-grid stagger">
       <div class="qr-card">
         <div class="qr-img"><img src="assets/images/qr-wechat.jpg" alt="微信公众号二维码" loading="lazy"></div>
         <h4>微信公众号</h4>
@@ -567,6 +660,7 @@
       <a href="#contact">商务合作</a>
     </div>
   </div>
+  <div class="footer-wordmark">SIJIUSHI</div>
   <div class="footer-mark">
     <img src="assets/images/logo.png" alt="四久时 SIJIUSHI" style="height:60px;width:auto;opacity:.65;">
     <span class="slogan">诚信共赢 · 追求极致</span>
@@ -591,6 +685,11 @@
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:0.12});
   document.querySelectorAll('section').forEach(s=>{ s.classList.add('reveal'); io.observe(s); });
+
+  const io2 = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io2.unobserve(e.target); } });
+  },{threshold:0.15});
+  document.querySelectorAll('.stagger').forEach(s=>io2.observe(s));
 </script>
 </body>
 </html>
