@@ -169,19 +169,42 @@
 
   /* ---------- Team ---------- */
   .team .head{margin-bottom:48px;}
-  .team-grid{display:flex;gap:24px;flex-wrap:wrap;}
-  .t-member{
-    flex:1;min-width:240px;background:#fff;border-radius:4px;padding:32px;
-    border:1px solid var(--border-light);
+
+  /* Boss feature */
+  .boss-feature{
+    display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:center;
+    background:linear-gradient(135deg,#FBF7EF,#F1E9D8);
+    border:1px solid var(--border-light);border-radius:4px;padding:40px;margin-bottom:32px;
   }
-  .t-member .avatar{
-    width:64px;height:64px;border-radius:50%;background:var(--ivory);
-    border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
-    font-family:var(--serif);font-weight:700;font-size:24px;color:var(--gold);margin-bottom:24px;
+  .boss-photo{
+    position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;
+    border:1px solid var(--gold);box-shadow:0 22px 54px -28px rgba(30,26,22,.55);
   }
-  .t-member h4{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:6px;}
-  .t-member .role{color:var(--gold);font-size:14px;margin-bottom:16px;}
-  .t-member .note{color:var(--muted);font-size:13px;line-height:1.8;}
+  .boss-photo .ph-initial{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-weight:700;font-size:72px;color:var(--gold);background:var(--ivory);
+  }
+  .boss-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .boss-eyebrow{font-size:13px;letter-spacing:.22em;color:var(--gold);margin-bottom:14px;}
+  .boss-info h3{font-family:var(--serif);font-weight:700;font-size:46px;color:var(--ink);line-height:1.1;margin-bottom:8px;}
+  .boss-info .role{color:var(--muted);font-size:16px;margin-bottom:20px;}
+  .boss-info p{color:var(--ink);font-size:16px;line-height:1.95;max-width:560px;}
+  .boss-sign{margin-top:22px;font-family:var(--cormorant);font-style:italic;font-size:18px;color:var(--gold);}
+
+  /* Three equal members */
+  .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .t-card{
+    background:#fff;border:1px solid var(--border-light);border-radius:4px;padding:24px;
+    transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;
+  }
+  .t-card:hover{transform:translateY(-6px);box-shadow:0 22px 46px -30px rgba(30,26,22,.45);border-color:var(--gold);}
+  .t-photo{position:relative;aspect-ratio:1;border-radius:4px;overflow:hidden;margin-bottom:20px;border:1px solid var(--border-light);}
+  .t-photo .ph-initial{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-weight:700;font-size:40px;color:var(--gold);background:var(--ivory);}
+  .t-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .t-card h4{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--ink);margin-bottom:4px;}
+  .t-card .role{color:var(--gold);font-size:14px;margin-bottom:12px;}
+  .t-card .note{color:var(--muted);font-size:14px;line-height:1.85;}
 
   /* ---------- Model ---------- */
   .model .head{margin-bottom:48px;}
@@ -362,7 +385,9 @@
     .row .img{width:100%;height:260px;}
     .t-grid{flex-direction:column;}
     .future-grid{grid-template-columns:1fr;}
-    .team-grid,.model-grid,.case-grid,.happy-grid{flex-direction:column;}
+    .boss-feature{grid-template-columns:1fr;}
+    .team-row{grid-template-columns:1fr;}
+    .model-grid,.case-grid,.happy-grid{flex-direction:column;}
     .footer-mark{font-size:56px;letter-spacing:4px;}
     section{padding:72px 0;}
     .sec-title{font-size:32px;}
@@ -536,11 +561,23 @@
       <h2 class="sec-title">一群把品牌当作品的人</h2>
       <p style="font-size:17px;color:var(--muted);line-height:1.9;margin-top:24px;max-width:1000px;">四久时由母婴行业资深从业者创立，汇聚品牌、运营、供应链与客服的多面手，陪伴每一个合作品牌从 0 到 1、从 1 到 N。</p>
     </div>
-    <div class="team-grid stagger">
-      <div class="t-member"><div class="avatar">王</div><h4>王一嵛</h4><div class="role">创始人 · 总经理</div><p class="note">深耕母婴与营养行业十余年，定义四久时的品牌孵化方法论。</p></div>
-      <div class="t-member"><div class="avatar">刘</div><h4>刘杨</h4><div class="role">联合创始人</div><p class="note">统筹运营与供应链，让好产品稳定、高效地抵达用户。</p></div>
-      <div class="t-member"><div class="avatar">蒋</div><h4>蒋小红</h4><div class="role">合伙人</div><p class="note">负责客户成功，把每一次服务都做成长期关系。</p></div>
-      <div class="t-member"><div class="avatar">秦</div><h4>秦静涛</h4><div class="role">合伙人</div><p class="note">专注数据与增长，用复盘驱动每一个品牌的下一程。</p></div>
+    <div class="boss-feature stagger">
+      <div class="boss-photo">
+        <span class="ph-initial">王</span>
+        <img src="assets/images/team-wang.jpg" alt="王一嵛 · 四久时创始人" loading="lazy" onerror="this.remove()">
+      </div>
+      <div class="boss-info">
+        <div class="boss-eyebrow">FOUNDER · 创始人</div>
+        <h3>王一嵛</h3>
+        <div class="role">创始人 · 总经理 · 老板</div>
+        <p>深耕母婴与营养行业十余年，定义四久时的品牌孵化方法论。从选品到履约，他始终相信：把每一个合作品牌当作品，才能陪它从 0 走到更远。</p>
+        <div class="boss-sign">— 四久时 · 王一嵛</div>
+      </div>
+    </div>
+    <div class="team-row stagger">
+      <div class="t-card"><div class="t-photo"><span class="ph-initial">刘</span><img src="assets/images/team-liu.jpg" alt="刘杨 · 联合创始人" loading="lazy" onerror="this.remove()"></div><h4>刘杨</h4><div class="role">联合创始人</div><p class="note">统筹运营与供应链，让好产品稳定、高效地抵达用户。</p></div>
+      <div class="t-card"><div class="t-photo"><span class="ph-initial">蒋</span><img src="assets/images/team-jiang.jpg" alt="蒋小红 · 合伙人" loading="lazy" onerror="this.remove()"></div><h4>蒋小红</h4><div class="role">合伙人</div><p class="note">负责客户成功，把每一次服务都做成长期关系。</p></div>
+      <div class="t-card"><div class="t-photo"><span class="ph-initial">秦</span><img src="assets/images/team-qin.jpg" alt="秦静涛 · 合伙人" loading="lazy" onerror="this.remove()"></div><h4>秦静涛</h4><div class="role">合伙人</div><p class="note">专注数据与增长，用复盘驱动每一个品牌的下一程。</p></div>
     </div>
   </div>
 </section>
