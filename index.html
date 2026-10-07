@@ -624,6 +624,14 @@
   .insight-read{display:inline-flex;align-items:center;gap:10px;margin-top:28px;color:var(--gold);font-size:14.5px;font-weight:500;}
   .insight-read i{font-style:normal;transition:transform .5s var(--ease);}
   .insight-feature:hover .insight-read i{transform:translateX(6px);}
+  .insight-feature.is-team{background:var(--ivory-2);border-color:var(--border-light);color:var(--ink);}
+  .insight-feature.is-team::after{content:"02";-webkit-text-stroke-color:rgba(128,101,52,.35);}
+  .insight-feature.is-team p{color:var(--muted);}
+  .insight-feature.is-team .insight-meta,.insight-feature.is-team .insight-read{color:var(--gold-deep);}
+  .insight-archive{margin-top:32px;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);}
+  .insight-archive summary{cursor:pointer;padding:22px 0;font:600 clamp(16px,1.4vw,19px) var(--serif);color:var(--ink);}
+  .insight-archive-note{color:var(--muted);font-size:14px;line-height:1.85;margin:0 0 18px;max-width:68ch;}
+  .insight-archive .insight-list{background:transparent;border:0;padding:0;}
   .insight-list{background:#fff;border:1px solid var(--border-light);border-radius:3px;padding:6px clamp(20px,2.4vw,34px);display:flex;flex-direction:column;justify-content:center;}
   .insight-item{
     display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(12px,1.8vw,22px);
@@ -1211,35 +1219,42 @@
     <div class="sec-head reveal">
       <div>
         <span class="sec-num">10 / INSIGHTS</span>
-        <h2 class="sec-title">把共同走过的路，<br>写成下一程的答案</h2>
+        <h2 class="sec-title">认识我们的思考，<br>也认识一起做事的人</h2>
       </div>
-      <p>从年度复盘到团队成长，持续记录四久时的思考、变化与真实时刻。这里不只讲结果，也讲我们怎样一起走到结果。</p>
+      <p>两篇精选，分别走近四久时的经营思考与团队成长。观点、组织与沿途的记录，各有位置，也各有时间背景。</p>
     </div>
     <div class="insight-layout stagger">
       <a class="insight-feature" href="https://mp.weixin.qq.com/s/DI3gJncKIYZjm9n66MqSeA" target="_blank" rel="noopener noreferrer">
-        <div class="insight-meta">2026.02.24 · 年度寄语</div>
+        <div class="insight-meta">公司观点 · <time datetime="2026-02-24">2026.02.24</time></div>
         <h3>做一回“痴人”，讲好我们的 2026</h3>
-        <p>写在开工第一天的一封信：谈精进、组织变革与共同成长，也谈怎样对得起每一份托付与信任。</p>
+        <p>从精细化运营到管理者培养，从持续学习到 AI：一封开工信，谈我们如何理解成长，也谈为什么选择长期同行。</p>
         <span class="insight-read">阅读公众号原文 <i aria-hidden="true">→</i></span>
       </a>
+      <a class="insight-feature is-team" href="https://mp.weixin.qq.com/s/3xPnEksoqffYRL9f6aqnjw" target="_blank" rel="noopener noreferrer">
+        <div class="insight-meta">团队与组织 · <time datetime="2025-03-09">2025.03.09</time></div>
+        <h3>致敬 6 年<br>整装再出发</h3>
+        <p>一次周年相聚，也记录一次组织前行：HRBP 岗位的设立、伙伴的成长，以及新阶段对团队提出的新要求。</p>
+        <span class="insight-read">走近我们的团队 <i aria-hidden="true">→</i></span>
+      </a>
+    </div>
+    <details class="insight-archive">
+      <summary>沿途记录 · 查看 4 篇历史文章</summary>
+      <p class="insight-archive-note">保留每一段真实走过的路。以下文章记录发布当时的团队、观点与组织状态，不代表当前业务成果或现行组织安排。</p>
       <div class="insight-list">
-        <a class="insight-item" href="https://mp.weixin.qq.com/s/3xPnEksoqffYRL9f6aqnjw" target="_blank" rel="noopener noreferrer">
-          <span class="num">02</span><div><h4>致敬 6 年 整装再出发</h4><time datetime="2025-03-09">2025.03.09 · 周年纪事</time></div><span class="arrow" aria-hidden="true">→</span>
-        </a>
         <a class="insight-item" href="https://mp.weixin.qq.com/s/BMlHOtGnUls374rUtH0vSg" target="_blank" rel="noopener noreferrer">
-          <span class="num">03</span><div><h4>不至于前，不止于此，2024 再见，2025 你好！</h4><time datetime="2024-12-31">2024.12.31 · 年度复盘</time></div><span class="arrow" aria-hidden="true">→</span>
+          <span class="num">01</span><div><h4>不至于前，不止于此，2024 再见，2025 你好！</h4><time datetime="2024-12-31">2024.12.31 · 团队年度感言</time></div><span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="insight-item" href="https://mp.weixin.qq.com/s/h75mGpmH88pPmLiySbJ4Ug" target="_blank" rel="noopener noreferrer">
-          <span class="num">04</span><div><h4>五年沉淀，励精前行，祝福公司五周年快乐</h4><time datetime="2024-03-11">2024.03.11 · 周年纪事</time></div><span class="arrow" aria-hidden="true">→</span>
+          <span class="num">02</span><div><h4>五年沉淀，励精前行，祝福公司五周年快乐</h4><time datetime="2024-03-11">2024.03.11 · 公司历程</time></div><span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="insight-item" href="https://mp.weixin.qq.com/s/0grbT8GHh_Am--YpohAcgw" target="_blank" rel="noopener noreferrer">
-          <span class="num">05</span><div><h4>尽情折腾，但波澜不惊；大步向前，皆有谋而动</h4><time datetime="2024-01-05">2024.01.05 · 年度寄语</time></div><span class="arrow" aria-hidden="true">→</span>
+          <span class="num">03</span><div><h4>尽情折腾，但波澜不惊；大步向前，皆有谋而动</h4><time datetime="2024-01-05">2024.01.05 · 历史战略思考</time></div><span class="arrow" aria-hidden="true">→</span>
         </a>
         <a class="insight-item" href="https://mp.weixin.qq.com/s/eMSMokYDK3k40jUGCQxHdA" target="_blank" rel="noopener noreferrer">
-          <span class="num">06</span><div><h4>炙热与寒冬，都值得我们一起渡过</h4><time datetime="2022-08-26">2022.08.26 · 团队故事</time></div><span class="arrow" aria-hidden="true">→</span>
+          <span class="num">04</span><div><h4>炙热与寒冬，都值得我们一起渡过</h4><time datetime="2022-08-26">2022.08.26 · 创始人访谈</time></div><span class="arrow" aria-hidden="true">→</span>
         </a>
       </div>
-    </div>
+    </details>
   </div>
 </section>
 
